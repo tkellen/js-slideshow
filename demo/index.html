@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="utf-8">
+    <title>slideshow demo</title>
+    <link rel="stylesheet" href="../style.css"/>
+    
+  </head>
+  <body>
+    <h1>Slideshow Demo</h1>
+    <div class="slideshow"> 
+      <a href="http://flickr.com/photos/tylerkellen/4794671596/" title="Arctic Flowers &amp; Ferns"><img src="http://goingslowly.smugmug.com/1224672329_btAjT-783x522.jpg" width="783" height="522" title="Arctic Flowers &amp; Ferns" alt="Arctic Flowers &amp; Ferns"/></a> 
+      <a href="http://flickr.com/photos/tylerkellen/5152985571/" title="Nun Near Bayon in Angkor Thom"><img src="http://goingslowly.smugmug.com/1224776323_5Kia8-783x522.jpg" width="783" height="522" title="Nun Near Bayon in Angkor Thom" alt="Nun Near Bayon in Angkor Thom"/></a> 
+      <a href="http://flickr.com/photos/tylerkellen/4805377620/" title="Motion Blur Road"><img src="http://goingslowly.smugmug.com/1224678256_6sYRm-783x522.jpg" width="783" height="522" title="Motion Blur Road" alt="Motion Blur Road"/></a> 
+      <a href="http://flickr.com/photos/tylerkellen/5415078857/" title="Cute Little Lao Girl"><img src="http://goingslowly.smugmug.com/1224945182_Soic6-783x522.jpg" width="783" height="522" title="Cute Little Lao Girl" alt="Cute Little Lao Girl"/></a> 
+      <a href="http://flickr.com/photos/tylerkellen/5246031295/" title="Tyler's Sandy Feet in Hammock"><img src="http://goingslowly.smugmug.com/1224850745_wyu77-783x522.jpg" width="783" height="522" title="Tyler's Sandy Feet in Hammock" alt="Tyler's Sandy Feet in Hammock"/></a> 
+      <a href="http://flickr.com/photos/tylerkellen/5287170469/" title="Vietnamese Noodle Maker"><img src="http://goingslowly.smugmug.com/1224869196_AdxWC-783x522.jpg" width="783" height="522" title="Vietnamese Noodle Maker" alt="Vietnamese Noodle Maker"/></a> 
+      <a href="http://flickr.com/photos/tylerkellen/5345981532/" title="Vietnamese Pot-bellied Piggies"><img src="http://goingslowly.smugmug.com/1224902430_mLnHA-783x522.jpg" width="783" height="522" title="Vietnamese Pot-bellied Piggies" alt="Vietnamese Pot-bellied Piggies"/></a> 
+   </div> 
+    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script src="../jquery.slideshow.js"></script>
+    <script>$(document).ready(function(){$('.slideshow').slideshow();});</script>
+    
+    <!--
+      code below here can be ignored, it just makes the demo look nicer
+      thanks to:
+        https://github.com/DanielRapp/Noisy
+    -->
+    <script>
+    (function(c){c.fn.noisy=function(b){b=c.extend({},c.fn.noisy.defaults,b);var d,a;if(window.JSON&&localStorage.getItem)a=localStorage.getItem(window.JSON.stringify(b));if(a)d=a;else{a=document.createElement("canvas");if(a.getContext){a.width=a.height=b.size;for(var h=a.getContext("2d"),e=h.createImageData(a.width,a.height),i=b.intensity*Math.pow(b.size,2),j=255*b.opacity;i--;){var f=(~~(Math.random()*a.width)+~~(Math.random()*a.height)*e.width)*4,g=i%255;e.data[f]=g;e.data[f+1]=b.monochrome?g:~~(Math.random()*255);
+e.data[f+2]=b.monochrome?g:~~(Math.random()*255);e.data[f+3]=~~(Math.random()*j)}h.putImageData(e,0,0);d=a.toDataURL("image/png");if(d.indexOf("data:image/png")!=0||c.browser.msie&&c.browser.version.substr(0,1)<9&&d.length>32768)d=b.fallback}else d=b.fallback;window.JSON&&localStorage&&localStorage.setItem(window.JSON.stringify(b),d)}return this.each(function(){c(this).css("background-image","url('"+d+"'),"+c(this).css("background-image"))})};c.fn.noisy.defaults={intensity:0.9,size:200,opacity:0.08,fallback:"",
+monochrome:false}})(jQuery);
+    $('body').noisy({opacity:.15});
+    </script>
+    <style type="text/css">
+    body
+    {
+      background-color:#555;
+      font:14px helevetica, verdana, sans-serif;
+      width:800px;
+      margin:0 auto;
+    }
+    input{font-size:14px}
+    h1
+    {
+      font-size:36px;
+      font-variant:small-caps;
+      color:#ccc;
+      text-shadow:0 0 3px #222;    
+    }
+    </style>
+  </body>
+</html>
