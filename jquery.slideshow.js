@@ -50,7 +50,7 @@ $.extend($.expr[':'],
          image.remove();
          slide.css(
          {
-           background:'#111 url("'+url+'") no-repeat',
+           background:'#111 url("'+url+'") center center no-repeat',
            zIndex:0
          });
          slide.prepend('<span class="title">'+slide.attr('title')+'</span>');
@@ -72,13 +72,13 @@ $.extend($.expr[':'],
        var wrap = $('<div class="slide-wrap"></div>');
        base.el.parent().wrap(wrap);
        base.el.parent().parent().hover(base.over,base.out);
-       
+
 
        // add previous button
        var prev = $('<div class="slide-prev"></div>');
        prev.click(base.prev);
        base.el.after(prev);
-       
+
        // prevent selecting
        prev.bind("dragstart selectstart",function(e){e.preventDefault();return false;});
 
@@ -89,7 +89,7 @@ $.extend($.expr[':'],
 
        // prevent selecting
        next.bind("dragstart selectstart",function(e){e.preventDefault();return false;});
-       
+
        // add thumb bar
        if(s.thumbnails)
        {
