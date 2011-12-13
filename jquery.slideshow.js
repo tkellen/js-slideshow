@@ -59,7 +59,7 @@ $.extend($.expr[':'],
          if(s.thumbnails)
          {
            url = url.replace(s.thumbSearch,s.thumbReplace);
-           state.thumbHTML.push('<span style="background-image:url('+url+')"/>');
+           state.thumbHTML.push('<span style="background: #111 url('+url+') center center no-repeat"/>');
          }
          state.total++;
        });
